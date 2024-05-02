@@ -1,18 +1,19 @@
 from ignition2.events.window_event import _WindowEvent
 from ignition2.events.input_event import _InputEvent
+from ignition2.window import Window
 
 import pygame as pg
 
 class EventHandler:
-    def __init__(self) -> None:
-        self.input = _InputEvent()
-        self.window = _WindowEvent()
+    def __init__(self, window: Window) -> None:
+        self.input_event = _InputEvent()
+        self.window_event = _WindowEvent(window)
 
     def handle_events(self):
-        events = self.__get_events()
+        events = self._get_events()
 
-        self.input.handle_events(events)
-        self.window.handle_events(events)
+        self.input_event._handle_events(events)
+        self.window_event._handle_events(events)
 
-    def __get_events(self):
+    def _get_events(self):
         return pg.event.get()

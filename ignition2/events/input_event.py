@@ -1,10 +1,10 @@
-from ignition2.events.event import Event
+from ignition2.events.event import _Event
 
 import pygame as pg
 import json
 import os
 
-class _InputEvent(Event):
+class _InputEvent(_Event):
     def __init__(self) -> None:
         super().__init__()
         self.types = [pg.KEYDOWN, pg.KEYUP]
@@ -13,7 +13,7 @@ class _InputEvent(Event):
     def _handle_event(self, event):
         if event.type == self.types[1]: return
 
-    def _get_key(self, key: str):
+    def _get_key(self, key):
         with open(self.keymap) as f:
             keymap = json.load(f)
 
