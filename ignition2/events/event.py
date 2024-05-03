@@ -1,4 +1,4 @@
-class _Event:
+class Event:
     def __init__(self) -> None:
         self.types: list = None
 

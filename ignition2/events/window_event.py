@@ -1,10 +1,6 @@
-from ignition2.events.event import _Event
-from ignition2.renderer import Renderer
+from includes import *
 
-import pygame as pg
-import sys
-
-class _WindowEvent(_Event):
+class WindowEvent(Event):
     def __init__(self, window) -> None:
         super().__init__()
         self.types = [pg.QUIT]
