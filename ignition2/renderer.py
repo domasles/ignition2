@@ -1,4 +1,6 @@
-from includes import *
+from ignition2.window import Window
+
+import numpy as np
 
 class Renderer:
     def __init__(self, window: Window, vert_shader: str=None, frag_shader: str=None) -> None:

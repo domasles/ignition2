@@ -1,4 +1,7 @@
-from includes import *
+from ignition2.events.input_event import InputEvent
+
+import json
+import os
 
 class InputSystem:
     def __init__(self, binds_file: str=None) -> None:

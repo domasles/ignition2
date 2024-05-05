@@ -1,4 +1,5 @@
-from includes import *
+import moderngl as mgl
+import pygame as pg
 
 class Window:
     def __init__(self, width: int, height: int, title: str=None, fullscreen: bool=False, target_fps: int=60, clear_col: tuple=(0, 0, 0)) -> None:

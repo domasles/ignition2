@@ -1,4 +1,8 @@
-from includes import *
+from ignition2.events.event import Event
+
+import pygame as pg
+import json
+import os
 
 class InputEvent(Event):
     def __init__(self) -> None:
