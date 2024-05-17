@@ -33,11 +33,11 @@ class Renderer:
             obj.vbo.release()
             obj.vao.release()
 
-    def add_obj(self, obj):
+    def enable(self, obj):
         if obj not in self.objs:
             self.objs.append(obj)
 
-    def remove_obj(self, obj):
+    def disable(self, obj):
         if obj in self.objs:
             self.objs.remove(obj)
 
