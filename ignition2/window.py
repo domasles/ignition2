@@ -1,11 +1,18 @@
+from ignition2.camera import Camera
+
 import moderngl as mgl
 import pygame as pg
 
 class Window:
-    def __init__(self, width: int, height: int, title: str=None, fullscreen: bool=False, target_fps: int=60, clear_col: tuple=(0, 0, 0)) -> None:
+    def __init__(self, width: int, height: int, camera: Camera, title: str=None, fullscreen: bool=False, target_fps: int=60, clear_col: tuple=(0, 0, 0)) -> None:
         self.width = width
         self.height = height
         self.title = title
+
+        camera.ratio = width / height
+        camera.view_m = camera.get_view_m()
+        camera.proj_m = camera.get_proj_m()
+        self.camera = camera
 
         self.fullscreen = fullscreen
         self.target_fps = target_fps
